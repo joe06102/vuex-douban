@@ -1,23 +1,28 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div>
+    <douban-header/>
+    <douban-body/>
   </div>
 </template>
 
 <script>
+import DBHeader from './components/douban-header'
+import DBBody from './components/douban-body'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'douban-header': DBHeader,
+    'douban-body': DBBody,
+  },
+  methods: {
+    setCity: function(city) {
+      this.$store.dispatch()
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import 'reset.css';
 </style>
